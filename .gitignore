@@ -3,7 +3,6 @@ out/
 !**/src/main/**/out/
 !**/src/test/**/out/
 
-
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -28,6 +27,3 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-### will you please ignore these files???????
-*.iml
-*.idea
