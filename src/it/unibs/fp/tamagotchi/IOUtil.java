@@ -1,10 +1,12 @@
-package it.unibs.fp.lab.tamagotchi;
-
+package it.unibs.fp.tamagotchi;
+import import it.unibs.fp.mylib;
+/*
+ * questa classe... 
+ * */
 public class IOUtil {
 
     public static Tamagotchi creaTamagotchi(){
-        //TODO interazione con utente
-        //InputDati
+       
         return new Tamagotchi("Pippo", 50, 50);
     }
 }

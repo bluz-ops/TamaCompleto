@@ -1,5 +1,7 @@
-package it.unibs.fp.lab.tamagotchi;
-
+package it.unibs.fp.tamagotchi;
+/*
+ * questa classe... 
+ * */
 import it.unibs.fp.mylib.MyMenu;
 import it.unibs.fp.mylib.NumeriCasuali;
 
@@ -34,8 +36,5 @@ public class Main {
         } while(!finito);
         System.out.println("Arrivederci!");
     }
-
-
-
-
+    
 }
