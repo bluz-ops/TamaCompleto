@@ -40,7 +40,8 @@ public class Tamagotchi {
         }
     }
     public boolean sonoMorto(){
-        return false;
+    	
+        return if sazieta==100;
     }
     public boolean sonoTriste() {
         return false;
