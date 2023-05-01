@@ -1,10 +1,10 @@
 package it.unibs.fp.tamagotchi;
-import it.unibs.fp.mylib;
 /*
  * questa classe...
  * */
 public class Tamagotchi {
-    public static final int FATTORE_CAREZZE = 2;  //
+    public static final String DESCRIZIONE = "Nickname: %s\n Sazieta:%2.1f \n Affetto:%2.1f \n";
+	public static final int FATTORE_CAREZZE = 2;  //
     public static final int FATTORE_BISCOTTI = 4; //
     public static final double FATTORE_PERCENTUALE = 0.1;  //
     
@@ -12,8 +12,9 @@ public class Tamagotchi {
     private String nome; 
     private double sazieta;
     private double affetto;
-    //costruttore
-    public Tamagotchi(String _nome, double _sazieta, double _affetto) {
+    /*costruttore
+     * NB: si e' scelto di inizializzare l'oggetto con interi mentre i valori */
+    public Tamagotchi(String _nome, int _sazieta, int _affetto) {
         this.nome = _nome;
         this.sazieta = _sazieta;
         this.affetto = _affetto;
@@ -49,5 +50,9 @@ public class Tamagotchi {
      METODO toString per Stampare la descrizione del tamagotchi a ogni passo
     */
     
-    
+    @Override
+    public String toString(){
+    	return String.format(DESCRIZIONE, nome, sazieta, affetto);
+    }
+
 }

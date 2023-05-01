@@ -8,14 +8,14 @@ import it.unibs.fp.mylib.NumeriCasuali;
 public class Main {
     public static final String NOME_MENU = "Menu Tamagotchi";
     public static final String[] VOCI_MENU = new String[]{"Dai carezze", "Dai biscotti"};
-    public static final String SALUTO = "Buongiorno!";
+    public static final String SALUTO = "Benvenuti a Tamagotchi!";
 
     public static void main(String[] args) {
         System.out.println(SALUTO);
 
         //TODO INTERAZIONE CON UTENTE
         Tamagotchi tama = IOUtil.creaTamagotchi();
-
+        tama.toString();
         MyMenu menu = new MyMenu(NOME_MENU, VOCI_MENU);
         boolean finito= false;
         do {
