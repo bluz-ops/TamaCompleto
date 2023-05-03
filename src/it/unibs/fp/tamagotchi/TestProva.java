@@ -1,20 +1,23 @@
-package it.unibs.fp.lab.tamagotchi;
+package it.unibs.fp.tamagotchi;
 
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class TestProva {
-    @Test
+    public static final double FATTORE_IMPRECISIONE_DOUBLE = 0.00001;
+	@Test
+    //questo test viene passato con successo se l'istanza t di Tamagotchi non e' nulla
     public void testCostruttoreNotNull() {
         Tamagotchi t = new Tamagotchi ("Nome", 10, 10);
         assertNotNull(t);
     }
     @Test
+    //questo test viene passato con successo se affetto e' stato effettivamente aumentato di 1
     public void testSoddisfazione (){
         Tamagotchi t = new Tamagotchi ("Nome", 10, 10);
         t.riceviCarezze(1);
-        assertTrue(Math.abs(t.getAffetto()-11)<0.00001);
+        assertTrue(Math.abs(t.getAffetto()-11)<FATTORE_IMPRECISIONE_DOUBLE);
     }
     /*
     * istanziare tamagotchi morto

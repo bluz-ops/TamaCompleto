@@ -2,7 +2,7 @@ package it.unibs.fp.tamagotchi;
 import it.unibs.fp.mylib.InputDati;
 
 /*
- * questa classe regola l'interazione con l'utente... 
+ * questa classe tutta static regola l'interazione con l'utente... 
  * */
 public class IOUtil {
 	public static final int MAX_SAZIETA = 100;
@@ -16,6 +16,7 @@ public class IOUtil {
        String nome = InputDati.leggiStringaNonVuota(MSG_NOME);
        int affetto= InputDati.leggiIntero(MSG_AFFETTO, 0, MAX_AFFETTO);
        int sazieta= InputDati.leggiIntero(MSG_SAZIETA, 0, MAX_SAZIETA);
-    		   return new Tamagotchi(nome, affetto, sazieta);
+       Tamagotchi tama= new Tamagotchi(nome, affetto, sazieta);
+       return tama;
     }
 }

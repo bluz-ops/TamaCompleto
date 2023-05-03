@@ -1,6 +1,6 @@
 package it.unibs.fp.tamagotchi;
 /*
- * questa classe... 
+ * questa classe contiene la logica del programma
  * */
 import it.unibs.fp.mylib.MyMenu;
 import it.unibs.fp.mylib.NumeriCasuali;
@@ -8,15 +8,15 @@ import it.unibs.fp.mylib.NumeriCasuali;
 public class Main {
     public static final String NOME_MENU = "Menu Tamagotchi";
     public static final String[] VOCI_MENU = new String[]{"Dai carezze", "Dai biscotti"};
-    public static final String SALUTO = "Benvenuti a Tamagotchi!";
+    public static final String SALUTO = "Benvenuti a Tamagotchi\n";
 
     public static void main(String[] args) {
         System.out.println(SALUTO);
 
         //TODO INTERAZIONE CON UTENTE
         Tamagotchi tama = IOUtil.creaTamagotchi();
-        tama.toString();
         MyMenu menu = new MyMenu(NOME_MENU, VOCI_MENU);
+     // istanza della classe MyMenu di mylib
         boolean finito= false;
         do {
             int scelta = menu.scegli();
@@ -28,13 +28,14 @@ public class Main {
                 case 2:
                     tama.riceviBiscotti(NumeriCasuali.estraiIntero(1, 5));
                 case 0:
-                    finito = true;
+                    finito = true;  //uscita dal programma
                     break;
                 default:
                     System.out.println("Seleziona un'opzione valida!");
+                    
             }
-        } while(!finito);
-        System.out.println("Arrivederci!");
+            System.out.println(tama); //stampa il toString relativo all'oggetto istanziato
+        } while(!finito); 
     }
     
 }

@@ -1,3 +1,5 @@
+package it.unibs.fp.tamagotchi;
+
 import static org.junit.Assert.*;
 
 import org.junit.Test;
@@ -5,27 +7,29 @@ import org.junit.Test;
 public class TamaTestMatricole
 {
     	// Attenzione, costruttore utilizzato:
-	// public Tamagotchi (String nome, int gradoAffettivo, int gradoSazieta)
+	    // public Tamagotchi (String nome, int gradoAffettivo, int gradoSazieta)
 	
 	@Test
+	//true se l'affetto e' stato effettivamente impostato a 0
 	public void dieForZeroSatisfaction() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi("Kira", 0, 50);
-		assertTrue(tama.sonoMorto());
+		assertTrue(tama.isMorto());
 	}
 	
 	@Test
+	//true se la sazieta e' stata effettivamente impostata a 0
 	public void dieForZeroHunger() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi("Kira", 50, 0);
-		assertTrue(tama.sonoMorto());
+		assertTrue(tama.isMorto());
 	}
 	
 	@Test
 	public void aliveWhenSatisfactionAndHungerAreGood() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi("Kira", 50, 50);
-		assertFalse(tama.sonoMorto());
+		assertFalse(tama.isMorto());
 	}
 /****	
 	@Test(expected=IllegalArgumentException.class)
@@ -42,11 +46,12 @@ public class TamaTestMatricole
 	
 	*****/
 	@Test
+	//viene passato con succcesso perche' non e' soddisfatto l'if di isTriste
 	public void petCanReceivePets() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi("Kira", 50, 50);
 		tama.riceviCarezze(1);
-		assertFalse(tama.sonoTriste());
+		assertFalse(tama.isTriste());
 	}
 	
 	@Test
@@ -54,36 +59,37 @@ public class TamaTestMatricole
 	{
 		final Tamagotchi tama = new Tamagotchi("Kira", 50, 50);
 		tama.riceviBiscotti(1);
-		assertFalse(tama.sonoTriste());
+		assertFalse(tama.isTriste());
 	}
 	
 	@Test
 	public void petIsUnhappyDueToHunger() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi("Kira", 50, 10);
-		assertTrue(tama.sonoTriste());
+		assertTrue(tama.isTriste());
 	}
 	
 	@Test
 	public void petIsUnhappyDueToExtremeRepletion() throws Exception 
 	{
-		final Tamagotchi tama = new Tamagotchi("Kira", 50, 95);
-		assertTrue(tama.sonoTriste());
+	    final Tamagotchi tama = new Tamagotchi("Kira", 50, 95);
+		assertTrue(tama.isTriste());
 	}
 	
 	@Test
 	public void petIsHappyInTheMidlleOfTheRange() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi("Kira", 50, 50);
-		assertFalse(tama.sonoTriste());
+		assertFalse(tama.isTriste());
 	}
 	
 	@Test
+	//tama muore di sazieta
 	public void petAugmentsItsRepletionAndDiesDueToCookies() throws Exception 
 	{
 		final Tamagotchi tama = new Tamagotchi("Kira", 50, 99);
 		tama.riceviBiscotti(10);
-		boolean res=tama.sonoMorto();
+		boolean res=tama.isMorto();
 		assertTrue(res);
 	}
 	
@@ -92,6 +98,7 @@ public class TamaTestMatricole
 	{
 		final Tamagotchi tama = new Tamagotchi("Kira", 29, 50);
 		tama.riceviCarezze(10);
-		assertFalse(tama.sonoTriste());
+		boolean res=tama.isTriste();
+		assertFalse(res);
 	}
 }
