@@ -1,15 +1,21 @@
 package it.unibs.fp.tamagotchi;
-/*
- * questa classe contiene la logica del programma
- * */
 import it.unibs.fp.mylib.MyMenu;
 import it.unibs.fp.mylib.NumeriCasuali;
-
+/**
+ * Classe Main: contiene la logica del programma
+ * @author molla blen zena
+ * @author Stocchetti Daian
+ * @author Fatih Aya 
+ *
+ */
 public class Main {
     public static final String NOME_MENU = "Menu Tamagotchi";
     public static final String[] VOCI_MENU = new String[]{"Dai carezze", "Dai biscotti"};
     public static final String SALUTO = "Benvenuti a Tamagotchi\n";
-
+    /**
+     * main method
+     * @param args
+     */
     public static void main(String[] args) {
         System.out.println(SALUTO);
 

@@ -1,9 +1,12 @@
 package it.unibs.fp.tamagotchi;
-
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-
+/**
+ * 
+ * class for junit testing
+ *
+ */
 public class TamaTestMatricole
 {
     	// Attenzione, costruttore utilizzato:

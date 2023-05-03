@@ -12,6 +12,10 @@ public class IOUtil {
 	public static final String MSG_NOME = "Inserisci il nome del tuo tamagotchi";
 
 	//metodo che ritorna un tamagotchi inizalizzandolo con i valori inseriti dall'utente
+	/**
+	 * Metodo per istanziare la classe Tamagotchi
+	 * @return tama crea un istanza di Tamagotchi
+	 */
     public static Tamagotchi creaTamagotchi(){
        String nome = InputDati.leggiStringaNonVuota(MSG_NOME);
        int affetto= InputDati.leggiIntero(MSG_AFFETTO, 0, MAX_AFFETTO);

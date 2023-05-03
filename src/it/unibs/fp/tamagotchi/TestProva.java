@@ -1,9 +1,12 @@
 package it.unibs.fp.tamagotchi;
-
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-
+/**
+ * 
+ * class for junit testing
+ *
+ */
 public class TestProva {
     public static final double FATTORE_IMPRECISIONE_DOUBLE = 0.00001;
 	@Test
