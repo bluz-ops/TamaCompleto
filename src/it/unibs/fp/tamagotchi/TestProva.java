@@ -31,5 +31,5 @@ public class TestProva {
     * dare carezze e far morire il tamagotchi
     * idem per dare biscootti
     *
-    * */
+    * * /
 }
